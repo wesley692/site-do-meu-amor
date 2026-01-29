@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Nossa jornada💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    min-height:100vh;
+    background: radial-gradient(circle at top, #1a002b, #05000a);
+    font-family:'Poppins', sans-serif;
+    color:white;
+    overflow-x:hidden;
+}
+
+main {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+    padding:40px 15px 80px;
+}
+
+.container {
+    text-align:center;
+    background: rgba(255,255,255,0.06);
+    border-radius:30px;
+    padding:35px 25px;
+    box-shadow:0 0 30px rgba(255,0,150,0.3);
+    backdrop-filter: blur(10px);
+    max-width:420px;
+    width:100%;
+    position:relative;
+    z-index:2;
+}
+
+h1 {
+    font-family:'Pacifico', cursive;
+    font-size:2.3em;
+    color:#ff7bd5;
+    text-shadow:0 0 10px #ff2fa6, 0 0 25px #ff2fa6;
+    margin-bottom:10px;
+}
+
+.subtitle {
+    font-size:1em;
+    opacity:0.85;
+    margin-bottom:20px;
+}
+
+.timer {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.box {
+    background: rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:15px 10px;
+    box-shadow:0 0 15px rgba(0,255,255,0.2);
+}
+
+.number {
+    font-size:1.6em;
+    font-weight:600;
+    color:#7cf9ff;
+    text-shadow:0 0 8px #00ffff;
+}
+
+.label {
+    font-size:0.7em;
+    opacity:0.8;
+    margin-top:5px;
+}
+
+.love {
+    margin-top:5px;
+    font-family:'Pacifico', cursive;
+    color:#ff9de2;
+    text-shadow:0 0 10px #ff2fa6;
+    font-size:1.2em;
+}
+
+.message {
+    font-size:0.95em;
+    opacity:0.9;
+    margin-top:10px;
+    animation:pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {opacity:0.6;}
+    50% {opacity:1;}
+    100% {opacity:0.6;}
+}
+
+/* GALERIA */
+.gallery {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+    gap:15px;
+}
+
+.photo {
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(255,0,150,0.4);
+    position:relative;
+}
+
+.photo img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.photo:hover img {
+    transform:scale(1.1);
+}
+
+.photo::after {
+    content:"💖";
+    position:absolute;
+    bottom:6px;
+    right:8px;
+    font-size:18px;
+    text-shadow:0 0 8px #ff2fa6;
+}
+
+/* EFEITOS */
+.heart {
+    position:fixed;
+    bottom:-20px;
+    color:#ff5db1;
+    animation: float 8s linear infinite;
+    opacity:0.8;
+    text-shadow:0 0 10px #ff2fa6;
+    z-index:1;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(0.8); opacity:0; }
+    10% { opacity:1; }
+    100% { transform: translateY(-120vh) scale(1.4); opacity:0; }
+}
+
+.neon {
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter: blur(80px);
+    opacity:0.4;
+    z-index:0;
+}
+
+.pink { background:#ff2fa6; top:-100px; left:-100px; }
+.blue { background:#00ffff; bottom:-100px; right:-100px; }
+
+audio { display:none; }
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 COLOQUE UM ARQUIVO "amor.mp3" NA MESMA PASTA -->
+<audio autoplay loop>
+  <source src="amor.mp3" type="audio/mpeg">
+</audio>
+
+<div class="neon pink"></div>
+<div class="neon blue"></div>
+
+<main>
+
+<div class="container">
+<h1>Tartaruga ninja & princesa japonesinha 💞</h1>
+<p class="subtitle">Desde 08/10/2025, vivendo a nossa história…</p>
+
+<div class="timer">
+  <div class="box"><div class="number" id="days">0</div><div class="label">DIAS</div></div>
+  <div class="box"><div class="number" id="hours">00</div><div class="label">HORAS</div></div>
+  <div class="box"><div class="number" id="minutes">00</div><div class="label">MINUTOS</div></div>
+  <div class="box"><div class="number" id="seconds">00</div><div class="label">SEGUNDOS</div></div>
+
+  <div class="box"><div class="number" id="dec">0</div><div class="label">DÉCIMOS</div></div>
+  <div class="box"><div class="number" id="cen">00</div><div class="label">CENTÉSIMOS</div></div>
+
+  <div class="box" style="grid-column: span 2;">
+    <div class="number" id="ms">000</div>
+    <div class="label">MILÉSIMOS</div>
+  </div>
+</div>
+
+<div class="love">Eu te amo minha japonesinha ❤️</div>
+<div class="message">A cada segundo que passo ao seu lado é o melhor momento da minha vida❤️💌</div>
+</div>
+
+<div class="container">
+<h1>Nossos Momentos 📸</h1>
+
+<div class="gallery">
+<div class="photo"><img src="foto1.jpg"></div>
+<div class="photo"><img src="foto2.jpg"></div>
+<div class="photo"><img src="foto3.jpg"></div>
+<div class="photo"><img src="foto4.jpg"></div>
+</div>
+
+<p class="message">Nossa jornada✨</p>
+</div>
+
+</main>
+
+<script>
+const startDate = new Date("2025-10-08T00:00:00");
+
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const decEl = document.getElementById("dec");
+const cenEl = document.getElementById("cen");
+const msEl = document.getElementById("ms");
+
+function updateCounter() {
+    const now = new Date();
+    let diff = now - startDate;
+    if (diff < 0) diff = 0;
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    const milliseconds = diff % 1000;
+    const dec = Math.floor(milliseconds / 100);
+    const cen = Math.floor(milliseconds / 10);
+
+    daysEl.innerText = days;
+    hoursEl.innerText = hours.toString().padStart(2,'0');
+    minutesEl.innerText = minutes.toString().padStart(2,'0');
+    secondsEl.innerText = seconds.toString().padStart(2,'0');
+    decEl.innerText = dec;
+    cenEl.innerText = cen.toString().padStart(2,'0');
+    msEl.innerText = milliseconds.toString().padStart(3,'0');
+
+    requestAnimationFrame(updateCounter);
+}
+updateCounter();
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (12 + Math.random()*26) + "px";
+    heart.style.animationDuration = (6 + Math.random()*6) + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),12000);
+}
+setInterval(createHeart, 350);
+</script>
+
+</body>
+</html>
