@@ -164,15 +164,29 @@ h1 {
 .blue { background:#00ffff; bottom:-100px; right:-100px; }
 
 audio { display:none; }
+
+    .botao-musica {
+  background: linear-gradient(45deg, #ff4da6, #ff99cc);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 0 15px #ff4da6;
+  cursor: pointer;
+  margin-top: 15px;
+}
 </style>
 </head>
 
 <body>
 
 <!-- 🎵 COLOQUE UM ARQUIVO "amor.mp3" NA MESMA PASTA -->
-<audio autoplay loop>
-  <source src="Amor.mp3" type=áudio/mpeg">
+<audio id="musica" loop>
+  <source src="Amor.mp3" type="audio/mpeg">
 </audio>
+
+<button onclick="tocarMusica()" class="botao-musica">💖 Tocar música</button>
 
 <div class="neon pink"></div>
 <div class="neon blue"></div>
@@ -265,6 +279,11 @@ function createHeart() {
     setTimeout(()=>heart.remove(),12000);
 }
 setInterval(createHeart, 350);
+
+    function tocarMusica() {
+  const audio = document.getElementById("musica");
+  audio.play();
+}
 </script>
 
 </body>
